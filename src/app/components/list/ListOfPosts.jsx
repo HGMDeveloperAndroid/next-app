@@ -17,7 +17,9 @@ export async function ListOfPosts() {
     posts.slice(0,5).map(post => (
        
     <article key={post.id}>
-         <Link href={`/posts/carp/${post.id}`} > 
+        <Link key={post.id} href="/posts/[items]" as={`/notes/${post.id}`}>
+          
+         {/* <Link href={`/posts/${post.id}`} >  */}
             <h2 style={{color: '#09f'}}>{post.title}</h2>
             <p>{post.body}</p>
             <LikeButton id={post.id}/>
